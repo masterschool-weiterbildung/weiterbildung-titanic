@@ -1,6 +1,7 @@
 import pytest
 
-from titanic.print_utilities import print_introduction
+from titanic import print_utilities
+from titanic import print_utilities
 
 
 class TestTitanic:
@@ -19,4 +20,4 @@ class TestTitanic:
                              ]
                              )
     def test_subtraction(self, text_to_print):
-        assert print_introduction(text_to_print) == "Welcome to the Ships CLI! Enter 'help' to view available commands."
+        assert print_utilities.print_introduction(text_to_print) == "Welcome to the Ships CLI! Enter 'help' to view available commands."
