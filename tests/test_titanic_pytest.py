@@ -1,7 +1,6 @@
 import pytest
 
 from titanic import print_utilities
-from titanic import print_utilities
 
 
 class TestTitanic:
