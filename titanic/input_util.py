@@ -2,6 +2,7 @@ from load_data import load_data
 import print_util
 import constant
 
+
 def get_user_input_command(message) -> str:
     while True:
         try:

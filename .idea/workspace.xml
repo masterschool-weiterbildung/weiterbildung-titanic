@@ -7,7 +7,10 @@
     <list default="true" id="89470553-42eb-4d9b-a1fe-56bcfd8d377e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_titanic_pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_titanic_pytest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/titanic/settings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/titanic/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titanic/input_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/input_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titanic/print_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/print_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titanic/titanic.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/titanic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,14 +51,52 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python tests.Python tests in test_titanic_pytest.py.executor": "Run",
+    "Python tests.Python tests in titanic.py.executor": "Run",
+    "Python.__init__.executor": "Run",
+    "Python.input_util.executor": "Run",
+    "Python.input_utilities.executor": "Run",
     "Python.print_utilities.executor": "Run",
     "Python.titanic.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/emorj/masterschool/weiterbildung-primenumber",
+    "last_opened_file_path": "C:/Users/emorj/masterschool/weiterbildung-help_your_teacher_two",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\emorj\masterschool\weiterbildung-titanic\titanic" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="weiterbildung-titanic" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.__init__" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,5 +114,13 @@
       <updated>1728823917228</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="val[0]" />
+        <watch expression="val[1]" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

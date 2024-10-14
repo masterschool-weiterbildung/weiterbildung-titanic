@@ -1,9 +1,11 @@
 import input_util
 import constant
 
+
 def print_introduction():
     print("Welcome to the Ships CLI! Enter "
-          f"'help' to view available commands.")
+          "'help' to view available commands.")
+
 
 def display_options(number):
     print("Available commands:")
