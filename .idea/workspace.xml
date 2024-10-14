@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="89470553-42eb-4d9b-a1fe-56bcfd8d377e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_titanic_pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_titanic_pytest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titanic/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/constant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/titanic/input_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/input_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titanic/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/load_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titanic/print_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/print_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titanic/titanic.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/titanic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +56,7 @@
     "Python tests.Python tests in test_titanic_pytest.py.executor": "Run",
     "Python tests.Python tests in titanic.py.executor": "Run",
     "Python.__init__.executor": "Run",
+    "Python.constant.executor": "Run",
     "Python.input_util.executor": "Run",
     "Python.input_utilities.executor": "Run",
     "Python.main.executor": "Run",
