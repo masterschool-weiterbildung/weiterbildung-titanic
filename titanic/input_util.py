@@ -1,9 +1,12 @@
-from load_data import load_data
+from urllib.parse import uses_query
+
+import load_data
 import print_util
 import constant
 
 
-def get_user_input_command(message) -> str:
+def get_user_input_command(message: str) -> str:
+    input_available_commands = ""
     while True:
         try:
             input_available_commands = (input(message))
@@ -21,40 +24,46 @@ def get_user_input_command(message) -> str:
     return input_available_commands
 
 
-def show_countries(number):
-    unique_country = set()
-    for dta in load_data()['data']:
-        unique_country.add(dta['COUNTRY'])
-
-    for country in sorted(list(unique_country)):
+def show_countries(number: int):
+    for country in sorted(set(call_load_data())):
         print(country)
 
+    call_user_input()
+
+
+def top_countries(number_countries: int):
+    countries = {}
+
+    for country in call_load_data():
+        if country in countries:
+            countries[country] += 1
+        else:
+            countries[country] = 1
+
+    sorted_countries = sorted(countries.items(),
+                              key=lambda country: country[1], reverse=True)
+
+    for country, count in sorted_countries[:int(number_countries)]:
+        print(f"{country} : {count}")
+
+    call_user_input()
+
+
+def call_load_data():
+    return [dta[constant.COUNTRY_KEY] for dta in load_data.fetch_data()[constant.BASE_KEY]]
+
+
+def call_user_input():
     print("")
     select_options(get_user_input_command(""))
 
 
-def top_countries(number):
-    locations = [dta['COUNTRY'] for dta in load_data()['data']]
-
-    counts = {location: locations.count(location) for location in set(locations)}
-
-    sorted_counts = dict(sorted(counts.items(), key=lambda item: item[1], reverse=True))
-
-    print(sorted_counts)
-
-def main():
-    top_countries(3)
-
-if __name__ == '__main__':
-    main()
-
-
-def split_choice(user_choice):
+def split_choice(user_choice: str):
     top_countries, number = user_choice.split(" ")
     return top_countries, number
 
 
-def select_options(user_choice):
+def select_options(user_choice: str) -> None:
     func_dict = {f"{constant.HELP}": print_util.display_options,
                  f"{constant.SHOW_COUNTRIES}": show_countries,
                  f"{constant.TOP_COUNTRIES_V2}": top_countries

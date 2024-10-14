@@ -9,7 +9,7 @@
       <change beforePath="$PROJECT_DIR$/tests/test_titanic_pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_titanic_pytest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/titanic/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/constant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/titanic/input_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/input_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/titanic/print_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/print_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titanic/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/load_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/titanic/titanic.py" beforeDir="false" afterPath="$PROJECT_DIR$/titanic/titanic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,16 +50,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests in main.py.executor": "Run",
+    "Python tests.Python tests in test.py (1).executor": "Run",
+    "Python tests.Python tests in test.py.executor": "Run",
     "Python tests.Python tests in test_titanic_pytest.py.executor": "Run",
     "Python tests.Python tests in titanic.py.executor": "Run",
     "Python.__init__.executor": "Run",
     "Python.input_util.executor": "Run",
     "Python.input_utilities.executor": "Run",
+    "Python.main.executor": "Run",
     "Python.print_utilities.executor": "Run",
+    "Python.test.executor": "Run",
     "Python.titanic.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/emorj/masterschool/weiterbildung-help_your_teacher_two",
+    "last_opened_file_path": "C:/Users/emorj/masterschool/practice-project",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
@@ -69,20 +74,17 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="weiterbildung-titanic" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/titanic" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/__init__.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/titanic/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -93,7 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -116,11 +118,14 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="val[0]" />
-        <watch expression="val[1]" />
-      </configuration>
-    </watches-manager>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/titanic/input_util.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
