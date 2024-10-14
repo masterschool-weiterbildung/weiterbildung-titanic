@@ -1,5 +1,3 @@
-from urllib.parse import uses_query
-
 import load_data
 import print_util
 import constant

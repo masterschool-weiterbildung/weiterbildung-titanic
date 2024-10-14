@@ -1,7 +1,7 @@
 import pytest
 
-class TestTitanic:
 
+class TestTitanic:
 
     @pytest.mark.parametrize("add_text_input, add_expected_output",
                              [
