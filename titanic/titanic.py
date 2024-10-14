@@ -1,6 +1,11 @@
-from load_data import load_data
+import print_util
+import input_util
 
-all_data = load_data()
-#print(all_data.keys())
 
-print("Welcome to the Ships CLI! Enter 'help' to view available commands.")
+def main():
+    print_util.print_introduction()
+
+    input_util.select_options(input_util.get_user_input_command(""))
+
+if __name__ == '__main__':
+    main()
