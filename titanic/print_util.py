@@ -13,12 +13,12 @@ def print_introduction() -> None:
           "'help' to view available commands.")
 
 
-def display_options(number):
+def display_options(number: int) -> None:
     """
     Displays the available commands and prompts the user for input.
 
     Parameter:
-        number (int): Currently unused in the function but can be passed as an argument.
+        number (int): Currently unused
 
     Returns:
         None
@@ -26,6 +26,10 @@ def display_options(number):
     print("Available commands:")
     print(f"{constant.HELP}")
     print(f"{constant.SHOW_COUNTRIES}")
-    print(f"{constant.TOP_COUNTRIES}\n")
+    print(f"{constant.TOP_COUNTRIES}")
+    print(f"{constant.SHIPS_BY_TYPE}")
+    print(f"{constant.SEARCH_SHIP}")
+    print(f"{constant.SPEED_HISTOGRAM}")
+    print(f"{constant.DRAW_MAP}\n")
 
     input_util.select_options(input_util.get_user_input_command(""))

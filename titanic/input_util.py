@@ -1,19 +1,7 @@
-from typing import List
-
 import load_data
 import print_util
 import constant
-
-
-def call_load_data() -> list:
-    """
-    Fetches data using the `load_data.fetch_data()` method
-
-    Returns:
-        list: A list of country data extracted from the loaded data.
-    """
-    return [dta[constant.COUNTRY_KEY] for dta in
-            load_data.fetch_data()[constant.BASE_KEY]]
+import map_util
 
 
 def call_user_input() -> None:
@@ -30,41 +18,34 @@ def call_user_input() -> None:
 
 def split_choice(user_choice: str) -> list[str]:
     """
-    Splits the given user choice string by spaces and returns a list of individual words.
+    Splits the given user choice string by spaces and returns a list
+    of individual words.
 
     Parameter:
         user_choice (str): The user input string to be split.
 
     Returns:
-        list[str]: A list of words resulting from splitting the user input by spaces.
+        list[str]: A list of words resulting from splitting the user
+        input by spaces.
     """
     return user_choice.split(" ")
 
 
 def get_user_input_command(message: str) -> str:
-    """
-    Prompts the user for input and validates the command entered.
-
-    Parameter:
-        message (str): The message or prompt to display to the user when asking for input.
-
-    Returns:
-        str: The validated user input command.
-
-    Raises:
-        ValueError: If the entered input does not match any of the allowed commands.
-
-    Example:
-        user_input = get_user_input_command("")
-    """
     input_available_commands = ""
     while True:
         try:
             input_available_commands = (input(message))
 
-            if (constant.HELP not in input_available_commands
-                    and constant.SHOW_COUNTRIES
-                    not in input_available_commands
+            option = [constant.HELP,
+                      constant.SHOW_COUNTRIES,
+                      constant.TOP_COUNTRIES_V2,
+                      constant.SHIPS_BY_TYPE,
+                      constant.SEARCH_SHIP,
+                      constant.SPEED_HISTOGRAM,
+                      constant.DRAW_MAP]
+
+            if (input_available_commands not in option
                     and constant.TOP_COUNTRIES_V2
                     not in input_available_commands):
                 raise ValueError()
@@ -79,7 +60,8 @@ def get_user_input_command(message: str) -> str:
 
 def show_countries(number: int) -> None:
     """
-    Displays a sorted list of unique countries fetched from the data, then prompts the user for input.
+    Displays a sorted list of unique countries fetched from the
+    data, then prompts the user for input.
 
     Parameter:
         number (int): Dummy parameter
@@ -87,15 +69,16 @@ def show_countries(number: int) -> None:
     Returns:
         None
     """
-    for country in sorted(set(call_load_data())):
+    for country in sorted(set(load_data.call_load_data())):
         print(country)
 
     call_user_input()
 
 
-def top_countries(number_countries: int):
+def top_countries(number_countries: int) -> None:
     """
-    Displays the top countries based on the number of occurrences in the dataset.
+    Displays the top countries based on the number of occurrences in
+    the dataset.
 
     Parameter:
         number_countries (int): The number of top countries to display.
@@ -105,7 +88,7 @@ def top_countries(number_countries: int):
     """
     countries = {}
 
-    for country in call_load_data():
+    for country in load_data.call_load_data():
         if country in countries:
             countries[country] += 1
         else:
@@ -120,13 +103,43 @@ def top_countries(number_countries: int):
     call_user_input()
 
 
+def ships_by_types(number: int) -> None:
+    [print(type_ship)
+     for type_ship in sorted(set(load_data.call_type_ship_load_data()))]
+
+    call_user_input()
+
+
+def search_ship(number: int):
+    input_ship_name = input("Enter Ship name: ")
+
+    [print(type_ship)
+     for type_ship in sorted(set(load_data.call_search_ship_load_data()))
+     if input_ship_name.lower() in type_ship.lower()]
+
+    call_user_input()
+
+
+def speed_histogram(number: int) -> None:
+    map_util.draw_ship_histogram()
+
+    call_user_input()
+
+
+def draw_map(number: int) -> None:
+    map_util.draw_map()
+
+    call_user_input()
+
+
 def select_options(user_choice: str) -> None:
     """
     Selects and executes a function based on the user's command.
     Utilize Dispatch Table Pattern
 
     Parameter:
-        user_choice (str): The command input by the user, which determines which function to call.
+        user_choice (str): The command input by the user, which determines
+        which function to call.
 
     Example:
         select_options("show_countries")
@@ -134,10 +147,21 @@ def select_options(user_choice: str) -> None:
     """
     func_dict = {f"{constant.HELP}": print_util.display_options,
                  f"{constant.SHOW_COUNTRIES}": show_countries,
-                 f"{constant.TOP_COUNTRIES_V2}": top_countries
+                 f"{constant.TOP_COUNTRIES_V2}": top_countries,
+                 f"{constant.SHIPS_BY_TYPE}": ships_by_types,
+                 f"{constant.SEARCH_SHIP}": search_ship,
+                 f"{constant.SPEED_HISTOGRAM}": speed_histogram,
+                 f"{constant.DRAW_MAP}": draw_map
                  }
 
-    if "help" in user_choice or "show_countries" in user_choice:
+    option = [constant.HELP,
+              constant.SHOW_COUNTRIES,
+              constant.SHIPS_BY_TYPE,
+              constant.SEARCH_SHIP,
+              constant.SPEED_HISTOGRAM,
+              constant.DRAW_MAP]
+
+    if user_choice in option:
         func_dict[user_choice](0)
     else:
         option, parameter = split_choice(user_choice)
